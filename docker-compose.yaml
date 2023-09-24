@@ -1,0 +1,99 @@
+# version: "3.8"
+# services:
+#   magazine-service:
+#     build:
+#       context: ./magazine-service
+#       target: development
+#     image: magazine-service:latest
+#     container_name: magazine-service
+#     env_file:
+#       - .env
+#     environment:
+#       NODE_ENV: "development"
+#     user: "0:0"
+#     ports:
+#       - "127.0.0.1:4000:4000"
+#     volumes:
+#       - "./src:/app/src"
+#     links:
+#       - mysql-db
+#     networks:
+#       - app-network
+#   mysql-db:
+#     image: mysql
+#     ports:
+#       - "3306:3306"
+#     expose:
+#       - "3306"
+#     container_name: mysql-db
+#     environment:
+#       MYSQL_ROOT_PASSWORD: app
+#       MYSQL_USER: app
+#       MYSQL_PASSWORD: supersecure
+#       MYSQL_DATABASE: mysql
+#   magazine-fe:
+#     container_name: magazine-fe
+#     build:
+#       context: ./path-to-your-nextjs-app
+#       dockerfile: Dockerfile
+#       ports:
+#         - "3000:3000"
+#       environment:
+#         - NODE_ENV=production
+#       networks:
+#         - app-network
+# networks:
+#   app-network:
+
+version: "3.8"
+
+services:
+  # Nest.js application service
+  magazine-service:
+    container_name: magazine-service
+    build:
+      context: ./magazine-service
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    networks:
+      - app-network
+    env_file:
+      - ./magazine-service/.env
+
+  # Next.js application service
+  magazine-fe:
+    container_name: magazine-fe
+    build:
+      context: ./magazine-fe
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+
+  # MySQL service
+  db:
+    image: mysql
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: supersecure
+      MYSQL_DATABASE: mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  mysql-data:

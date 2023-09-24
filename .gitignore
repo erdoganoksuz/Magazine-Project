@@ -1,0 +1,23 @@
+# Node.js dependencies
+node_modules/
+
+# Build and development artifacts
+build/
+dist/
+.eslintcache
+.DS_Store
+
+# Docker Compose artifacts
+.dockerignore
+
+# Environment variables
+.env
+
+# Log files
+*.log
+
+# OS or editor-specific files
+Thumbs.db
+.vscode/
+.idea/
+.next/
