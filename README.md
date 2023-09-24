@@ -53,9 +53,8 @@ docker-compose down
 ```
 
 ## Docker Compose Video
-
-![](/docs/docker-compose.mov)
+Take a look to `docs` folder for docker compose video.
 
 ## Full Demo Video
 
-![](/docs/demo.mov)
+Take a look to `docs` folder for full demo video.
