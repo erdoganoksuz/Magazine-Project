@@ -54,7 +54,9 @@ docker-compose down
 
 ## Docker Compose Video
 Take a look to `docs` folder for docker compose video.
+- https://github.com/erdoganoksuz/Magazine-Project/blob/master/docs/docker-compose.mov
 
 ## Full Demo Video
 
 Take a look to `docs` folder for full demo video.
+- https://github.com/erdoganoksuz/Magazine-Project/blob/master/docs/demo.mov
