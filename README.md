@@ -42,7 +42,7 @@ You can access the Swagger API documentation by visiting the following URL:
 
 ## Configuration
 
-The `.env `file in the magazine-service folder contains configuration options for the Nest.js application. Update this file to configure database connections, API keys, and other environment-specific settings for your Magazine Service.
+The `.env `file in the magazine-service folder contains configuration options for the Nest.js application. Update this file to configure database connections, and other environment-specific settings.
 
 ## Stopping the Containers
 
