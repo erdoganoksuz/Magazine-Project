@@ -27,7 +27,7 @@ Before you get started, ensure that you have the following prerequisites install
 
 3. Build and run the Docker containers using Docker Compose:
    ```bash
-   docker-compose up --build
+   docker-compose -p my-magazine-apps up --build
    ```
 4. Your Magazine applications will now be accessible:
    - Nest.js Magazine Service: http://localhost:4000
@@ -53,10 +53,13 @@ docker-compose down
 ```
 
 ## Docker Compose Video
+
 Take a look to `docs` folder for docker compose video.
+
 - https://github.com/erdoganoksuz/Magazine-Project/blob/master/docs/docker-compose.mov
 
 ## Full Demo Video
 
 Take a look to `docs` folder for full demo video.
+
 - https://github.com/erdoganoksuz/Magazine-Project/blob/master/docs/demo.mov

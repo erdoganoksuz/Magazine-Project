@@ -10,9 +10,6 @@ dist/
 # Docker Compose artifacts
 .dockerignore
 
-# Environment variables
-.env
-
 # Log files
 *.log
 
